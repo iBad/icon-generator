@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Icon generator for Corona SDK">
+    <meta name="author" content="Angry Marmot">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>Icon Generator - Corona SDK</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+		body {
+		  padding-top: 0;
+		}
+		.padalign {
+		  padding: 20px;
+		  text-align: center;
+		}
+		[logo] {
+			position: absolute;
+			display: inline-block;
+
+			width: 220px;
+			height: 160px;
+			background-image: url("img/amlogo.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			left: 10px;
+			
+			top: 20px;
+		}
+
+		[cat] {
+			position: absolute;
+			display: inline-block;
+
+			width: 120px;
+			height: 120px;
+			background-image: url("img/cp.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			left: -40px;
+			top: 200px;
+
+		}
+			[cat]:hover {
+				left: 0px;
+			}
+
+		[icons] {
+			width: 120px;
+			height: 140px;
+
+			position: absolute;
+			right: 30px;
+			top: 30px;
+
+			padding: 10px;
+			font-size: 18px;
+		}
+			[icons] [count] {
+				font-weight: bold;
+				font-size: 40px;
+			}
+
+
+		[myads] {
+			width: 180px;
+			height: 160px;
+
+			position: absolute;
+			right: 30px;
+			top: 200px;
+
+			padding: 10px;
+			font-size: 18px;
+		}
+
+		[ad] {
+			cursor: pointer;
+		}
+
+		[ad] [icon] {
+			display: block;
+			height: 90px;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-image: url("img/icon.png");
+		}
+
+		[myads] [title] {
+			font-size: 14px;
+			font-weight: bold;
+		}
+
+		[myads] [smalltitle] {
+			font-size: 12px;
+		}
+
+
+		[buttonsrow] {
+			padding: 20px;
+		}
+
+		.color1 { font-weight: bold;   color: rgb(255, 0, 0); }
+		.color2 { font-weight: bold;   color: rgb(255, 165, 0); }
+		.color3 { font-weight: bold;   color: rgb(255, 255, 0); }
+		.color4 { font-weight: bold;   color: rgb(0, 128, 255); }
+		.color5 { font-weight: bold;   color: rgb(0, 0, 255); }
+		.color6 { font-weight: bold;   color: rgb(75, 0, 130); }
+		.color7 { font-weight: bold;   color: rgb(238, 130, 238); }
+		
+    </style>
+  </head>
+
+  <body>
+
+
+  <div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Warning</h4>
+        </div>
+        <div class="modal-body">
+          	File you have selected is not PNG format. This version only supports PNG files.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+  <div class="modal fade" id="warningempty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Warning</h4>
+        </div>
+        <div class="modal-body">
+          	You should select your PNG file to upload.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+  <a cat href="http://www.ladeezfirstmedia.com/2014/03/12/the-cats-pajamas-award-goes-to-the-angry-marmot-icon-generator-tool/"></a>
+  <a logo href="http://angrymarmot.org"></a>
+  
+  <div icons class="bg-success text-center hide">
+  	<div count>0</div>
+  	<div>Icons generated!</div>
+  </div>
+
+ 	<div myads class="bg-success text-center hide">
+  		<p title>Press Magic button!
+  		Help to save <span class="color1">U</span><span class="color2">n</span><span class="color3">i</span><span class="color4">c</span><span class="color5">o</span><span class="color6">r</span><span class="color7">n</span>s </p>
+  		<p smalltitle>Hurry only 83 left in wild!</p>
+ 	
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="UCGYHNA9ZZCG4">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+	</div>
+<!--
+  <div myads class="bg-success text-center hide">
+
+  	<div ad class="hide" data-url="https://play.google.com/store/apps/details?id=com.hhayotsyan.mathdefender">
+  		<span icon></span>
+  		<span title>Math Defender</span>
+  	</div>
+
+  	<div><strong>&nbsp;</strong></div>
+  	<div class="text1 hide"><strong>Shameless</strong></div>
+  	<div class="text2 hide"><strong>Self</strong></div>
+  	<div class="text3 hide"><strong>Promotion</strong></div>
+  </div>
+-->
+    <div class="container">
+
+        <div class="row">
+        	<h1 class="text-center">Icon Generator for Corona SDK</h1>
+        	<div class="col-md-8 col-md-offset-2 padalign bg-info">
+		   		<h2>Select Image to resize</h2>
+		        <p class="lead">Image should be PNG format. <br> For best results use at least 1024x1024 resolution image.</p>
+
+
+		        <form action="show.php" method="post" id="submitform" accept="image/png" onsubmit="return CheckFile();" enctype="multipart/form-data">
+					
+					<label for="file">Select file to submit:</label>
+					<input type="file" name="file" id="file" style="display:inline"><br>
+					<div buttonsrow>
+						<button type="button" id="generateicons" class="btn btn-primary btn-lg">
+						  <span class="glyphicon glyphicon-wrench"></span> Generate
+						</button>
+						
+						<button type="button" id="downloadicons" class="btn btn-success btn-lg hide">
+						  <span class="glyphicon glyphicon-cloud-download"></span> Download Icons
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 padalign">
+				<h3>Following icons will be generated</h3>
+				
+				<div class="row">
+					<div class="col-md-5 padalign bg-success">
+						<h4>iOS 7.1</h4>
+						<ul class="text-left">
+ 							<li>Icon-40.png - <strong>40x40</strong></li>
+ 							<li>Icon-40@2x.png - <strong>80x80</strong></li>
+ 							<li>Icon-60.png - <strong>60x60</strong></li>
+ 							<li>Icon-60@2x.png - <strong>60x60</strong></li>
+ 							<li>Icon-72.png - <strong>72x72</strong></li>
+ 							<li>Icon-72@2x.png - <strong>144x144</strong></li>
+ 							<li>Icon-76.png - <strong>76x76</strong></li>
+ 							<li>Icon-76@2x.png - <strong>152x152</strong></li>
+ 							<li>Icon-Small-50.png - <strong>50x50</strong></li>
+ 							<li>Icon-Small-50@2x.png - <strong>100x100</strong></li>
+ 							<li>Icon-Small.png - <strong>29x29</strong></li>
+ 							<li>Icon-Small@2x.png - <strong>58x58</strong></li>
+ 							<li>Icon.png - <strong>57x57</strong></li>
+ 							<li>Icon@2x.png - <strong>114x114</strong></li>
+ 							<li>iTunesArtwork.png - <strong>512x512</strong></li>
+ 							<li>iTunesArtwork@2x.png - <strong>1024x1024</strong></li>
+ 							<li>Icon-16.png - <strong>16x16</strong></li>
+ 							<li>Icon-24.png - <strong>24x24</strong></li>
+ 							<li>Icon-32.png - <strong>32x32</strong></li>
+ 							<li>Icon-64.png - <strong>64x64</strong></li>
+ 							<li>Icon-120.png - <strong>120x120</strong></li>
+ 							<li>Icon-152.png - <strong>152x152</strong></li>
+ 							<li>Icon-Small-40.png - <strong>40x40</strong></li>
+ 							<li>Icon-Small-40@2x.png - <strong>80x80</strong></li>
+ 						</ul>
+
+ 						<h4>iOS 8</h4>
+						<ul class="text-left">
+
+ 							<li>Icon-60@3x.png - <strong>180x180</strong></li>
+ 							<li>Icon-Small@3x.png - <strong>87x87</strong></li>
+ 							<li>Icon-Small-40@3x.png - <strong>120x120</strong></li>
+ 							
+ 						</ul>
+					</div>
+
+
+					<div class="col-md-5 col-md-offset-2 padalign bg-success">
+						<h4>Android</h4>
+						<ul class="text-left">
+							<li>Icon-ldpi.png - <strong>36x36</strong></li>
+							<li>Icon-mdpi.png - <strong>48x48</strong></li>
+							<li>Icon-hdpi.png - <strong>72x72</strong></li>
+							<li>Icon-xhdpi.png - <strong>96x96</strong></li>
+							<li>Icon-xxhdpi.png - <strong>144x144</strong></li>
+							<li>Icon-xxxhdpi.png - <strong>192x192</strong></li>
+						</ul>
+
+						<h4>Other</h4>
+						<ul class="text-left">
+							<li>Icon-Amazon.png - <strong>114x114 (For Amazon Game submission)</strong></li>
+							<li>upload.png - <strong>1024x1024 (Your original file)</strong></li>
+						</ul>
+ 			
+							
+					</div>
+					
+
+				</div>
+
+			</div>
+		</div>
+
+
+	
+    </div><!-- /.container -->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+	    var CheckFile = function() {
+			var fname = document.getElementById("file").value;
+
+			if (fname == "") {
+				$('#warningempty').modal('show');
+				return false;
+			}
+
+			if (fname.substr(fname.length - 4) != ".png") {
+				$('#warning').modal('show');
+				return false;
+			}
+
+
+			return true;
+	    };
+
+		var DownloadURL = function(url) {
+		    var hiddenIFrameID = 'hiddenDownloader',
+		        iframe = document.getElementById(hiddenIFrameID);
+		    if (iframe === null) {
+		        iframe = document.createElement('iframe');
+		        iframe.id = hiddenIFrameID;
+		        iframe.style.display = 'none';
+		        document.body.appendChild(iframe);
+		    }
+		    iframe.src = url;
+		};
+
+    	$(document).ready(function() {
+    		if (window.location.hash != "") {
+    			$("#downloadicons").click(function() {
+					var url = "upload/" + window.location.hash.substr(1) + ".zip";
+					DownloadURL(url);
+				}).removeClass("hide");
+
+    		}
+
+    		$("#generateicons").click(function() {
+				$("#submitform").submit();
+    		});
+
+
+    		$.get("numicons.php", function(data) {
+    			$("[count]").text(data);
+    			$("[icons]").removeClass("hide").addClass("animated tada");
+    		});
+
+
+
+    		setTimeout(function(){
+    			$("[myads]").removeClass("hide").addClass("animated fadeIn");
+    			setTimeout(function() {
+    				$(".text1").removeClass("hide").addClass("animated bounceIn");
+
+    				setTimeout(function() {
+    					$(".text1").removeClass("hide").addClass("animated bounceOutDown");
+    				}, 2000);
+
+    			}, 500);
+					
+				setTimeout(function() {
+    				$(".text2").removeClass("hide").addClass("animated bounceIn");
+
+    				setTimeout(function() {
+    					$(".text2").removeClass("hide").addClass("animated bounceOutDown");
+    				}, 2000);
+
+    			}, 1000);
+	
+				setTimeout(function() {
+    				$(".text3").removeClass("hide").addClass("animated bounceIn");
+
+    				setTimeout(function() {
+    					$(".text3").removeClass("hide").addClass("animated bounceOutDown");
+    				}, 2000);
+
+    			}, 1500);
+    		}, 1000);
+
+
+    		setTimeout(function() {
+    			$("[ad]").removeClass("hide").addClass("animated zoomIn").click(function() {
+    				window.open($(this).data("url"),'_blank');
+    			});
+
+    			setInterval(function() {
+    				$("[ad]").addClass("animated rubberBand");
+
+    				setTimeout(function() {
+    					$("[ad]").removeClass("zoomIn").removeClass("animated rubberBand");
+    				}, 1000);
+
+    			}, 5000);
+    		}, 4500);
+
+    	});
+    </script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39776569-2', 'angrymarmot.org');
+ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
